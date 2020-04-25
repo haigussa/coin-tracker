@@ -1,15 +1,13 @@
 import React from 'react'
+import StyledIncomeItem from '../styles/StyledIncomeItem'
 
-const incomeItem = ({incomeName, amount}) => {
+const IncomeItem = ({ incomeName, amount }) => {
     return (
-        <div>
-            <li>
-                <span>{incomeName}: </span>
-                <span>{amount}</span>
-            </li>
-            
-        </div>
+        <StyledIncomeItem>
+            <div>{incomeName}: </div>
+            <div>{amount}</div>
+        </StyledIncomeItem>
     )
 }
 
-export default incomeItem
+export default IncomeItem

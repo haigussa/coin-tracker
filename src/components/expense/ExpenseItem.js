@@ -1,12 +1,12 @@
 import React from 'react'
+import StyledExpenseItem from '../styles/StyledExpenseItem'
 
-const ExpenseItem = ({expenseName, expenseAmount}) => {
+const ExpenseItem = ({ expenseName, expenseAmount }) => {
     return (
-        <li>
-            <span className="expense-name">{expenseName}: </span>
-            <span className="expense-amount">{expenseAmount}</span>
-          
-        </li>
+        <StyledExpenseItem>
+            <div className="expense-name">{expenseName}: </div>
+            <div className="expense-amount">{expenseAmount}</div>
+        </StyledExpenseItem>
     )
 }
 

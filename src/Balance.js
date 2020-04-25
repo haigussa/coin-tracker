@@ -8,7 +8,7 @@ const Balance = () => {
     const { totalExpense } = useContext(ExpenseContext)
     return (
         <div>
-            <h2> Balance: {totalIncome - totalExpense} </h2>
+            <h2> Balance: €{(totalIncome - totalExpense).toLocaleString()} </h2>
         </div>
     )
 }

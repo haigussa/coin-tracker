@@ -1,7 +1,7 @@
 import React, { createContext, useState } from 'react'
-import {v4} from 'uuid'
+import { v4 } from 'uuid'
 
-export const  IncomeContext = createContext()
+export const IncomeContext = createContext()
 
 const IncomeContextProvider = ({ children }) => {
 
@@ -15,16 +15,37 @@ const IncomeContextProvider = ({ children }) => {
     const totalIncome = incomes.reduce((acc, curr) => {
         return acc += curr.incomeAmount;
     }, 0)
-    const addIncome = (incomeName, incomeAmount, id)=>{
+    const addIncome = (incomeName, incomeAmount, id) => {
         setIncomes([
             ...incomes,
-            { incomeName, incomeAmount, id}
+            { incomeName, incomeAmount, id }
 
         ])
     }
 
+    const editIncome = (id, entryName, entryAmount) => {
+        const updatedIncome = incomes.map(inc => {
+            if (id === inc.id) {
+                return {...inc, incomeName: entryName, incomeAmount: parseInt(entryAmount) }
+            } else {
+                return inc
+            }
+        })
+        setIncomes(updatedIncome)
+    }
+
+  const deleteIncome=(id)=>{
+      const IncomeAfterDelete = incomes.filter(inc=>{
+          if(id!==inc.id){
+              return inc
+          }
+          return null;
+      })
+      setIncomes(IncomeAfterDelete)
+  }
+
     return (
-        <IncomeContext.Provider value={{incomes, totalIncome, addIncome}}>
+        <IncomeContext.Provider value={{ incomes, totalIncome, addIncome, editIncome, deleteIncome }}>
             {children}
         </IncomeContext.Provider>
     )

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import StyledApp from './components/styles/StyledApp.js';
 import IncomeList from './components/income/IncomeList';
 import ExpenseList from './components/expense/ExpenseList'
@@ -32,6 +32,4 @@ const App = () => {
     </StyledApp>
   )
 }
-
-
 export default App;

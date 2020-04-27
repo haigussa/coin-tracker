@@ -12,7 +12,6 @@ const StyledIncomeItem = styled.li`
     display:flex;
     justify-content: space-between;
 
-
 `
 
 export default StyledIncomeItem

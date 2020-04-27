@@ -3,9 +3,10 @@ import styled from 'styled-components'
 const StyledMain = styled.main`
 display: flex;
 justify-content:center;
-margin: 1rem auto;
+margin: auto;
 max-width: 780px;
 background-color: #1B2D45;
+border: 2px solid #FDE24F;
 @media (max-width: 768px) {
     flex-direction: column;
     

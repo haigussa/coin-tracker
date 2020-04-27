@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useContext } from 'react'
 import IncomeItem from './IncomeItem'
 import { IncomeContext } from '../income/IncomeContext'
 import StyledIncomeList from '../styles/StyledIncomeList'

@@ -4,16 +4,22 @@ const StyledAddCoinForm = styled.div`
 background-color: #1B2D45;
 padding: 1.5rem 2rem;
 max-width: 780px;
-margin:auto;
+margin: auto;
 box-sizing:border-box;
 .type-selector{
-    color:red;
     margin-bottom: 1rem;
     select{
         font-size:1.5rem;
         background-color: #00214D;
         color: white;
         height: 2.5rem;
+        &:hover{
+            cursor: pointer;
+            border: none;
+            background-color:#00214D;
+            border: 1px solid #FDE24F;
+
+        }
     }
 }
  .input-container{
@@ -57,6 +63,14 @@ box-sizing:border-box;
      font-size:1.3rem;
      border-radius:5px;
      margin: 1rem auto 2rem;
+     transition: all 0.3s;
+    background-color:#00214D;
+    color:white;
+     &:hover{
+         border: none;
+         cursor: pointer;
+         border: 1px solid #FDE24F;
+     }
  }
 `
 

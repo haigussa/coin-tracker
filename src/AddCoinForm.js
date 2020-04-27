@@ -13,7 +13,6 @@ const AddCoinForm = () => {
 
     const [isIncome, setIsIncome] = useState("")
 
-
     const handleTypeChange = e => {
         if (e.target.value === "incomeValue") {
             setIsIncome(true)

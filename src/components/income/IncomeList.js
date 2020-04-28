@@ -8,12 +8,17 @@ const IncomeList = () => {
     const incomeElements = incomes.map(inc => <IncomeItem key={inc.id} id={inc.id} incomeName={inc.incomeName} incomeAmount={inc.incomeAmount} editIncome={editIncome} deleteIncome={deleteIncome} />)
 
     return (
+        incomes.length?
         <StyledIncomeList>
             <h2>IncomeList</h2>
             {incomeElements}
             <p className="total-income">Total Income: {totalIncome}</p>
+        </StyledIncomeList>:
+        <StyledIncomeList>
+            <h2>No Income</h2>
         </StyledIncomeList>
     )
+    
 }
 
 export default IncomeList

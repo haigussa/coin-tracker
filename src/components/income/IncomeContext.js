@@ -12,14 +12,14 @@ const IncomeContextProvider = ({ children }) => {
         { id: v4(), incomeName: "Garage Sale", incomeAmount: 600 }
     ])
 
-    const totalIncome = incomes.reduce((acc, curr) => {
-        return acc += curr.incomeAmount;
+    const totalIncome = incomes.reduce((acc, cur) => {
+        return acc += cur.incomeAmount;
     }, 0)
+    
     const addIncome = (incomeName, incomeAmount, id) => {
         setIncomes([
             ...incomes,
             { incomeName, incomeAmount, id }
-
         ])
     }
 

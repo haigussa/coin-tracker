@@ -4,6 +4,8 @@ const StyledIncomeList =  styled.ul`
 margin:0;
 padding:0;
 box-sizing:border-box;
+min-height: 60vh;
+
 h2{
     color:white;
     text-align:center;

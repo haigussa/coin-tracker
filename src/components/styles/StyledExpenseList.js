@@ -6,6 +6,7 @@ margin:0;
 padding:0 0 0 2px;
 border-left: 1px solid #FDE24F;
 margin-left: 2px;
+min-height: 60vh;
 h2{
     text-align:center;
     padding:1rem;

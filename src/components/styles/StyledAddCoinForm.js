@@ -6,22 +6,21 @@ padding: 1.5rem 2rem;
 max-width: 780px;
 margin: auto;
 box-sizing:border-box;
-.type-selector{
-    margin-bottom: 1rem;
-    select{
-        font-size:1.5rem;
-        background-color: #00214D;
-        color: white;
-        height: 2.5rem;
-        &:hover{
-            cursor: pointer;
-            border: none;
-            background-color:#00214D;
-            border: 1px solid #FDE24F;
 
-        }
-    }
-}
+.type-selector select, form button{
+     padding: 0.5rem 1rem;
+     font-size:1.3rem;
+     border-radius: 5px;
+     border: 1px solid #00214D;
+     margin: 1rem auto 2rem;
+     transition: all 0.3s;
+     background-color:#00214D;
+     color:white;
+     &:hover{
+         border: 1px solid #FDE24F;
+         cursor: pointer;
+     }
+ }
  .input-container{
      margin: 1rem auto;
      max-width: 780px;
@@ -58,20 +57,7 @@ box-sizing:border-box;
         }
     }
  }
- form button{
-     padding: 0.5rem 1rem;
-     font-size:1.3rem;
-     border-radius:5px;
-     margin: 1rem auto 2rem;
-     transition: all 0.3s;
-    background-color:#00214D;
-    color:white;
-     &:hover{
-         border: none;
-         cursor: pointer;
-         border: 1px solid #FDE24F;
-     }
- }
+
 `
 
 export default StyledAddCoinForm

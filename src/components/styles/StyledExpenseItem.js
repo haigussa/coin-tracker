@@ -14,4 +14,4 @@ const StyledExpenseItem = styled.li`
 
 `
 
-export default StyledExpenseItem
+// export default StyledExpenseItem

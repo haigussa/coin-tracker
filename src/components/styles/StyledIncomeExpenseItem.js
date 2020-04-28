@@ -10,15 +10,29 @@ const StyledIncomeExpenseItem = styled.li`
         min-width: 100%;
         display:flex;
         justify-content: space-between;
+        align-items:center;
         .item-container{
             width: 70%;
             display:flex;
             justify-content: space-between;
     }
-    .edit-delete-btn{
+    .fa-btn{
         display:flex;
         justify-content:space-between;
+        button{
+                padding: 5px;
+                margin: 3px;
+                background-color: transparent;
+                border:none;
+                font-size: 1rem;
+                /* border:0.5px solid #FDE24F; */
+                color:#00214D;
+                align-self:center;
+                border-radius: 5px;
+                height: 100%;
+                width: 100%;
         }
+ }
 `
 
 export default StyledIncomeExpenseItem

@@ -15,18 +15,26 @@ const IncomeContextProvider = ({ children }) => {
     const totalIncome = incomes.reduce((acc, cur) => {
         return acc += cur.incomeAmount;
     }, 0)
-    
+
     const addIncome = (incomeName, incomeAmount, id) => {
         setIncomes([
             ...incomes,
-            { incomeName, incomeAmount, id }
+            {
+                incomeName,
+                incomeAmount,
+                id
+            }
         ])
     }
 
     const editIncome = (id, entryName, entryAmount) => {
         const updatedIncome = incomes.map(inc => {
             if (id === inc.id) {
-                return {...inc, incomeName: entryName, incomeAmount: parseInt(entryAmount) }
+                return {
+                    ...inc,
+                    incomeName: entryName,
+                    incomeAmount: parseInt(entryAmount)
+                }
             } else {
                 return inc
             }
@@ -34,18 +42,26 @@ const IncomeContextProvider = ({ children }) => {
         setIncomes(updatedIncome)
     }
 
-  const deleteIncome=(id)=>{
-      const IncomeAfterDelete = incomes.filter(inc=>{
-          if(id!==inc.id){
-              return inc
-          }
-          return null;
-      })
-      setIncomes(IncomeAfterDelete)
-  }
+    const deleteIncome = (id) => {
+        const IncomeAfterDelete = incomes.filter(inc => {
+            if (id !== inc.id) {
+                return inc
+            }
+            return null;
+        })
+        setIncomes(IncomeAfterDelete)
+    }
 
     return (
-        <IncomeContext.Provider value={{ incomes, totalIncome, addIncome, editIncome, deleteIncome }}>
+        <IncomeContext.Provider
+            value={{
+                incomes,
+                totalIncome,
+                addIncome,
+                editIncome,
+                deleteIncome
+            }}
+        >
             {children}
         </IncomeContext.Provider>
     )

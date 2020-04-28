@@ -11,7 +11,7 @@ const AddCoinForm = () => {
     const [inputName, setInputName] = useState("")
     const [inputAmount, setInputAmount] = useState("")
 
-    const [isIncome, setIsIncome] = useState("")
+    const [isIncome, setIsIncome] = useState(null)
 
     const handleTypeChange = e => {
         if (e.target.value === "incomeValue") {
@@ -19,7 +19,6 @@ const AddCoinForm = () => {
         } else if (e.target.value === "expenseValue") {
             setIsIncome(false)
         } else {
-            // setIsIncome(null)
         }
     }
 
@@ -34,17 +33,14 @@ const AddCoinForm = () => {
         e.preventDefault()
         if (isIncome === true) {
             inputName !== "" && inputAmount !== "" &&
-                addIncome(inputName, inputAmount, v4())
+                addIncome(inputName, inputAmount.toLocaleString(), v4())
             setInputName("")
             setInputAmount("")
-            // setIsIncome(null)
         } else if (isIncome === false) {
-
             inputName !== "" && inputAmount !== "" &&
-                addExpense(inputName, inputAmount, v4())
+                addExpense(inputName, inputAmount.toLocaleString(), v4())
             setInputName("")
             setInputAmount("")
-            // setIsIncome(null)
         }
         else if (isIncome === null) {
             alert("All fields are mandatory")
@@ -63,7 +59,6 @@ const AddCoinForm = () => {
                     </select>
                 </div>
                 <div className="input-container">
-
                     <div className="input-item input-name-container">
                         <label htmlFor="inputName"></label>
                         <input name="inputName" id="inputName" type="text" value={inputName} placeholder="e.g. Electricity" onChange={handleNameChange} />
@@ -71,14 +66,10 @@ const AddCoinForm = () => {
                     <div className="input-item input-amount-container">
                         <label htmlFor="inputAmount"></label>
                         <input name="inputAmount" id="inputAmount" type="number" value={inputAmount} onChange={handleAmountChange} placeholder="e.g. 200" required />
-
                     </div>
                 </div>
-
-                <button type="submit" onClick={handleSubmit}>{isIncome ? "Add Income": isIncome===false ? "Add Expense" : "Add"}</button>
-
+                <button type="submit" onClick={handleSubmit}>{isIncome ? "Add Income" : isIncome === false ? "Add Expense" : "Add"}</button>
             </form>
-
         </StyledAddCoinForm>
     )
 }

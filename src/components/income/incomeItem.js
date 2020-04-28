@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import StyledIncomeExpenseItem from '../styles/StyledIncomeExpenseItem'
+import { FaPen, FaTrash, FaCheck, FaWindowClose } from 'react-icons/fa'
+
 
 const IncomeItem = ({ incomeName, incomeAmount, editIncome, id, deleteIncome }) => {
     const [state, setState] = useState({ id, incomeName, incomeAmount })
@@ -36,9 +38,9 @@ const IncomeItem = ({ incomeName, incomeAmount, editIncome, id, deleteIncome }) 
                     <div>{incomeName}</div>
                     <div>{incomeAmount}</div>
                 </div>
-                <div className="edit-delete-btn">
-                    <button onClick={handleEdit}>E</button>
-                    <button onClick={handleDelete}>D</button>
+                <div className="fa-btn">
+                    <button onClick={handleEdit}><FaPen/></button>
+                    <button onClick={handleDelete}><FaTrash/></button>
                 </div>
             </StyledIncomeExpenseItem>
         ) : (
@@ -46,9 +48,9 @@ const IncomeItem = ({ incomeName, incomeAmount, editIncome, id, deleteIncome }) 
                     <StyledIncomeExpenseItem>
                         <input name="incomeName" type="text" value={state.incomeName} onChange={handleChange} />
                         <input name="incomeAmount" type="number" value={state.incomeAmount} onChange={handleChange} />
-                        <div>
-                            <button type="submit" onClick={handleSubmit}>K</button>
-                            <button onClick={handleCancel}>X</button>
+                        <div className="fa-btn">
+                            <button type="submit" onClick={handleSubmit}><FaCheck/></button>
+                            <button onClick={handleCancel}><FaWindowClose/></button>
                         </div>
                     </StyledIncomeExpenseItem>
                 </form>

@@ -26,7 +26,11 @@ const ExpenseContextProvider = ({ children }) => {
     const editExpense = (id, expenseName, expenseAmount) => {
         const updatedExpense = expenses.map(exp => {
             if (exp.id === id) {
-                return { ...exp, expenseName: expenseName, expenseAmount: parseInt(expenseAmount) }
+                return {
+                    ...exp,
+                    expenseName: expenseName,
+                    expenseAmount: parseInt(expenseAmount)
+                }
             }
             return exp
         })
@@ -44,7 +48,15 @@ const ExpenseContextProvider = ({ children }) => {
     }
 
     return (
-        <ExpenseContext.Provider value={{ expenses, totalExpense, addExpense, editExpense, deleteExpense }}>
+        <ExpenseContext.Provider
+            value={{
+                expenses,
+                totalExpense,
+                addExpense,
+                editExpense,
+                deleteExpense
+            }}
+        >
             {children}
         </ExpenseContext.Provider>
     )

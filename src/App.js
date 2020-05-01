@@ -15,10 +15,8 @@ const App = () => {
       <h1>CoinTracker</h1>
       <IncomeContextProvider>
         <ExpenseContextProvider>
-          <div className="balance-row">
-            <Balance />
-          </div>
           <AddCoinForm />
+          <Balance />
           <StyledMain>
             <div className="income-wrapper">
               <IncomeList />

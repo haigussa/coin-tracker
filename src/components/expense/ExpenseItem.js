@@ -6,7 +6,7 @@ const ExpenseItem = ({ id, expenseName, expenseAmount, editExpense, deleteExpens
     const [state, setState] = useState({
         id: id, expenseName: expenseName, expenseAmount: expenseAmount
     })
-    const [isEditing, setIsEditing] = useState(false)
+    const [isEditing, setIsEditing] = useState(true)
 
     const handleEdit = () => {
         setIsEditing(true)
@@ -42,11 +42,11 @@ const ExpenseItem = ({ id, expenseName, expenseAmount, editExpense, deleteExpens
                     <button onClick={handleEdit}><FaPen /></button>
                     <button onClick={handleDelete}><FaTrash /></button>
                 </div>
-            </StyledItem> :
+            </StyledItem > :
             <form onSubmit={handleSubmit}>
-                <StyledItem>
+                <StyledItem >
                     <div className="expense-name" ><input name="expenseName" value={state.expenseName} onChange={handleChange} type="text" /> </div>
-                    <div className="expense-amount"><input name="expenseAmount" value={state.expenseAmount} onChange={handleChange} type="number" /></div>
+                    <div className="expense-amount"><input name="expenseAmount" value={state.expenseAmount} onChange={handleChange} type="number" autoFocus/></div>
                     <div className="fa-btn">
                         <button type="submit" onClick={handleSubmit}><FaCheck/></button>
                         <button onClick={handleCancel}><FaWindowClose/></button>

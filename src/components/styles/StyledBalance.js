@@ -10,7 +10,6 @@ h2{
     margin-top:0;
     .balance-amount{
         background-color: ${props =>props.balanceStat > 0 ? "#00A48B": "#FF5470" } ;
-        /* color: #1B2D45; */
         padding: 0.7rem;
         border-radius: 10px;
     }

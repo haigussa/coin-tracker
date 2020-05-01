@@ -6,7 +6,6 @@ padding: 1.5rem 2rem;
 max-width: 780px;
 margin: auto;
 box-sizing:border-box;
-
 .type-selector select, form button{
      padding: 0.5rem 1rem;
      font-size:1.3rem;
@@ -49,7 +48,7 @@ box-sizing:border-box;
         }
     }
     .input-amount-container{
-        flex-basis:10%;
+        /* flex-basis:5%; */
         input{
             box-sizing:border-box;
             height: 1.5rem;

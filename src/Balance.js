@@ -8,7 +8,6 @@ const Balance = () => {
     const { totalIncome } = useContext(IncomeContext)
     const { totalExpense } = useContext(ExpenseContext)
     const totalBalance= (totalIncome-totalExpense)
-console.log(typeof(totalBalance))
     return (
         <StyledBalance spentIndicator={(totalExpense / totalIncome) * 100} balanceStat = {totalBalance}>
             <h2> Balance: <span className="balance-amount" >

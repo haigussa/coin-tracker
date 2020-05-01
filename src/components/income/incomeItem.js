@@ -39,8 +39,12 @@ const IncomeItem = ({ incomeName, incomeAmount, editIncome, id, deleteIncome }) 
                     <div>{incomeAmount}</div>
                 </div>
                 <div className="fa-btn">
-                    <button onClick={handleEdit}><FaPen/></button>
-                    <button onClick={handleDelete}><FaTrash/></button>
+                    <button onClick={handleEdit}>
+                        <FaPen />
+                    </button>
+                    <button onClick={handleDelete}>
+                        <FaTrash />
+                    </button>
                 </div>
             </StyledItem>
         ) : (
@@ -49,8 +53,12 @@ const IncomeItem = ({ incomeName, incomeAmount, editIncome, id, deleteIncome }) 
                         <input name="incomeName" type="text" value={state.incomeName} onChange={handleChange} />
                         <input name="incomeAmount" type="number" value={state.incomeAmount} onChange={handleChange} />
                         <div className="fa-btn">
-                            <button type="submit" onClick={handleSubmit}><FaCheck/></button>
-                            <button onClick={handleCancel}><FaWindowClose/></button>
+                            <button type="submit" onClick={handleSubmit}>
+                                <FaCheck />
+                            </button>
+                            <button onClick={handleCancel}>
+                                <FaWindowClose />
+                            </button>
                         </div>
                     </StyledItem>
                 </form>

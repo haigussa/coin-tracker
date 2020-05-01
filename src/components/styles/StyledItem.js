@@ -1,9 +1,12 @@
 import styled from 'styled-components'
 
-const StyledIncomeExpenseItem = styled.li`
+const StyledItem = styled.li`
+        background-color: ${props =>
+                props.inputType === "incomeRow" ? "#00EBC7"
+                        : "#FF5470"
+        };
         box-sizing:border-box;
         list-style:none;
-        background-color: #00EBC7;
         padding: 0.5rem 1rem ;
         margin: 0.5rem 0;
         color:#1B2D45;
@@ -25,7 +28,6 @@ const StyledIncomeExpenseItem = styled.li`
                 background-color: transparent;
                 border:none;
                 font-size: 1rem;
-                /* border:0.5px solid #FDE24F; */
                 color:#00214D;
                 align-self:center;
                 border-radius: 5px;
@@ -35,4 +37,4 @@ const StyledIncomeExpenseItem = styled.li`
  }
 `
 
-export default StyledIncomeExpenseItem
+export default StyledItem

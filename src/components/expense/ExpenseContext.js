@@ -13,7 +13,7 @@ const ExpenseContextProvider = ({ children }) => {
     ])
 
     const totalExpense = expenses.reduce((acc, cur) => {
-        return acc += cur.expenseAmount
+        return acc += parseInt(cur.expenseAmount)
     }, 0)
 
     const addExpense = (expenseName, expenseAmount, id) => {

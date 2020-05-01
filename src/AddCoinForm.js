@@ -12,6 +12,7 @@ const AddCoinForm = () => {
     const [inputAmount, setInputAmount] = useState("")
 
     const [isIncome, setIsIncome] = useState(null)
+    
 
     const handleTypeChange = e => {
         if (e.target.value === "incomeValue") {
@@ -19,6 +20,7 @@ const AddCoinForm = () => {
         } else if (e.target.value === "expenseValue") {
             setIsIncome(false)
         } else {
+            setIsIncome(null)
         }
     }
 
@@ -26,24 +28,24 @@ const AddCoinForm = () => {
         setInputName(e.target.value)
     }
     const handleAmountChange = e => {
-        setInputAmount(parseInt(e.target.value))
+        setInputAmount(e.target.value)
     }
 
     const handleSubmit = e => {
         e.preventDefault()
         if (isIncome === true) {
             inputName !== "" && inputAmount !== "" &&
-                addIncome(inputName, inputAmount.toLocaleString(), v4())
+                addIncome(inputName, parseInt(inputAmount), v4())
             setInputName("")
             setInputAmount("")
         } else if (isIncome === false) {
             inputName !== "" && inputAmount !== "" &&
-                addExpense(inputName, inputAmount.toLocaleString(), v4())
+                addExpense(inputName, parseInt(inputAmount), v4())
             setInputName("")
             setInputAmount("")
         }
         else if (isIncome === null) {
-            alert("All fields are mandatory")
+            alert("Please choose Income or Expense")
         }
     }
 
@@ -53,7 +55,7 @@ const AddCoinForm = () => {
                 <label htmlFor="addCoinForm" />
                 <div className="type-selector">
                     <select name="income-expense" id="income-expense" onChange={handleTypeChange} defaultValue={"choose"}>
-                        <option value="choose" disabled >Choose</option>
+                        <option value="choose" disabled >Select Item</option>
                         <option value="incomeValue">Income</option>
                         <option value="expenseValue">Expense</option>
                     </select>
@@ -61,7 +63,7 @@ const AddCoinForm = () => {
                 <div className="input-container">
                     <div className="input-item input-name-container">
                         <label htmlFor="inputName"></label>
-                        <input name="inputName" id="inputName" type="text" value={inputName} placeholder="e.g. Electricity" onChange={handleNameChange} />
+                        <input name="inputName" id="inputName" type="text" value={inputName} placeholder="e.g. Electricity" onChange={handleNameChange} autoFocus />
                     </div>
                     <div className="input-item input-amount-container">
                         <label htmlFor="inputAmount"></label>

@@ -16,13 +16,14 @@ box-sizing:border-box;
      transition: all 0.3s;
      background-color:#00214D;
      color:white;
+     outline:none;
      &:hover{
          border: 1px solid #FDE24F;
          cursor: pointer;
      }
  }
  .input-container{
-     margin: 1rem auto;
+     margin: 0.5rem auto 1rem;
      max-width: 780px;
     display:flex;
     justify-content:space-between;
@@ -31,12 +32,13 @@ box-sizing:border-box;
         flex-direction:column;
         align-items: center;
         min-width: 100%;
+        margin: 0;
         .input-name-container input{
             margin: 1rem auto;
         }
     }
     .input-name-container{
-        flex-basis: 65%;
+        flex-basis: 60%;
         input{
             box-sizing:border-box;
             min-width:100%;

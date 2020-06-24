@@ -9,10 +9,10 @@ const IncomeItem = ({ incomeName, incomeAmount, editIncome, id, deleteIncome }) 
 
     const handleEdit = () => {
         setIsEditing(true)
+
     }
 
-    const handleChange = (e) => {
-        console.log(e.target.value)
+    const handleChange = e => {
         setState({
             ...state,
             [e.target.name]: e.target.value
@@ -28,7 +28,7 @@ const IncomeItem = ({ incomeName, incomeAmount, editIncome, id, deleteIncome }) 
     const handleDelete = () => {
         return deleteIncome(id)
     }
-    const handleCancel = () => {
+    const handleCancel = (e) => {
         setIsEditing(false)
     }
     return (

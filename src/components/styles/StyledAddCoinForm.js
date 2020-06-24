@@ -10,10 +10,10 @@ box-sizing:border-box;
      padding: 0.5rem 1rem;
      font-size:1.3rem;
      border-radius: 5px;
-     border: 1px solid #00214D;
+     border: 1px solid #999;
      margin: 1rem auto 2rem;
      transition: all 0.3s;
-     background-color:#00214D;
+     background-color:#666;
      color:white;
      outline:none;
      &:hover{
@@ -45,16 +45,17 @@ box-sizing:border-box;
             border-radius: 6px;
             padding:1.2rem;
             font-size: 1.2rem;
+            outline: none;
         }
     }
     .input-amount-container{
-        /* flex-basis:5%; */
         input{
             box-sizing:border-box;
             height: 1.5rem;
             border-radius: 6px;
             padding:1.2rem;
             font-size: 1.2rem;
+            outline:none;
         }
     }
  }

@@ -8,7 +8,6 @@ import AddCoinForm from './AddCoinForm';
 import ExpenseContextProvider from './components/expense/ExpenseContext';
 import StyledMain from './components/styles/StyledMain.js';
 
-
 const App = () => {
   return (
     <StyledApp className="App">

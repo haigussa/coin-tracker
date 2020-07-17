@@ -22,5 +22,4 @@ const IncomeList = () => {
     )
 
 }
-
 export default IncomeList

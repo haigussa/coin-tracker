@@ -14,6 +14,11 @@ const StyledIncomeList = styled.ul`
     @media(max-width: 780px){
        min-height: 100%;
     }
+    h2{
+        color:white;
+        text-align:center;
+        padding:1rem;
+    }
 `
 export const ListHeading = styled.div`
     h2{

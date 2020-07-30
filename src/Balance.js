@@ -10,7 +10,7 @@ const Balance = () => {
     return (
         <StyledBalance spentIndicator={(totalExpense / totalIncome) * 100} balanceStat={totalBalance}>
             {
-                totalBalance != 0 ?
+                totalBalance !== 0 ?
                     <h2> Balance: <span className="balance-amount" >
                         €{totalBalance.toLocaleString()}
                     </span>

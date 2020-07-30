@@ -22,11 +22,10 @@ background-color:${props =>props.balanceStat > 0 ? "#00A48B": props.balanceStat 
 color:white;
 border-radius: 10px;
 position: relative;
-border-radius: 30px;
 .balance{
     position:absolute;
     background-color: #FF5470;
-    border-radius: 30px ;
+    border-radius: 10px ;
     height:100%;
     max-width:100%;
     animation: progressBar 2s ease-out;

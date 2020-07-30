@@ -1,17 +1,22 @@
-import React, { createContext, useState } from 'react'
-import { v4 } from 'uuid'
+import React, { createContext, useState, useEffect, } from 'react'
 
 export const ExpenseContext = createContext()
 
 const ExpenseContextProvider = ({ children }) => {
 
-    const [expenses, setExpenses] = useState([
-        { id: v4(), expenseName: "Coffee", expenseAmount: 200 },
-        { id: v4(), expenseName: "Plane", expenseAmount: 100 },
-        { id: v4(), expenseName: "Car", expenseAmount: 300 },
-        { id: v4(), expenseName: "Rent", expenseAmount: 600 }
-    ])
-
+    const [expenses, setExpenses] = useState([])
+    
+    useEffect(() => {
+        let localExpense = localStorage.getItem('expense')
+        if(localExpense) {
+            setExpenses(JSON.parse(localExpense))
+        }
+    }, [])
+    
+        useEffect(() => {
+           localStorage.setItem('expense', JSON.stringify(expenses))
+        }, [expenses])
+    
     const totalExpense = expenses.reduce((acc, cur) => {
         return acc += parseInt(cur.expenseAmount)
     }, 0)

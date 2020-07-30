@@ -18,9 +18,8 @@ h2{
 max-width: 500px;
 height: 50px;
 margin: 1rem auto;
-background-color:#00A48B;
+background-color:${props =>props.balanceStat > 0 ? "#00A48B": props.balanceStat === 0? "#1B2D45":"#FF5470" };
 color:white;
-border: 5px solid #00214D;
 border-radius: 10px;
 position: relative;
 border-radius: 30px;

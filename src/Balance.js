@@ -18,8 +18,7 @@ const Balance = () => {
                     : <h2>Please Add Income or Expense</h2>
             }
             <div className="balance-wrapper" >
-                <div className="balance">
-                </div>
+                <div className="balance"/>
             </div>
         </StyledBalance>
 

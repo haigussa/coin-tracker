@@ -42,12 +42,14 @@ const StyledItem = styled.li`
         }
  }
  input{
-         /* background-color: #FFCBD4; */
          border: none;
          height: 2rem;
          padding: 0 5px;
          border-radius: 6px;
-       
+         margin: 2px;
+         &:focus{
+                 outline:none;
+         }
  }
 `
 

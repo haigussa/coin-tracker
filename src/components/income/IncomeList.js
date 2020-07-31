@@ -4,8 +4,23 @@ import { IncomeContext } from '../income/IncomeContext'
 import StyledList, { ListHeading } from '../styles/StyledList'
 
 const IncomeList = () => {
-    const { incomes, totalIncome, editIncome, deleteIncome } = useContext(IncomeContext)
-    const incomeElements = incomes.map(inc => <IncomeItem key={inc.id} id={inc.id} incomeName={inc.incomeName} incomeAmount={inc.incomeAmount} editIncome={editIncome} deleteIncome={deleteIncome} />)
+    const {
+        incomes,
+        totalIncome,
+        editIncome,
+        deleteIncome
+    } = useContext(IncomeContext)
+
+    const incomeElements = incomes.map(inc =>
+        <
+            IncomeItem
+            key={inc.id}
+            id={inc.id}
+            incomeName={inc.incomeName}
+            incomeAmount={inc.incomeAmount}
+            editIncome={editIncome}
+            deleteIncome={deleteIncome}
+        />)
 
     return (
         incomes.length ?
@@ -16,9 +31,7 @@ const IncomeList = () => {
                     <p className="total-income">Total Income: {totalIncome}</p>
                 </ListHeading>
             </StyledList> :
-            <StyledList>
-                <h2>No Income</h2>
-            </StyledList>
+            ""
     )
 
 }

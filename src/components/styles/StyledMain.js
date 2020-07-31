@@ -5,11 +5,8 @@ display: flex;
 justify-content:center;
 margin: auto;
 max-width: 780px;
-background-color: #1B2D45;
-border: 2px solid #FDE24F;
 @media (max-width: 768px) {
     flex-direction: column;
-    
 }
 
 .income-wrapper, .expense-wrapper{

@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 const StyledBalance = styled.div`
-background-color: #1B2D45;
 max-width: 780px;
 margin: 0 auto;
 padding:1rem 0;

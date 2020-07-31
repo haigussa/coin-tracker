@@ -3,7 +3,13 @@ import StyledItem from '../styles/StyledItem'
 import { FaPen, FaTrash, FaCheck, FaWindowClose } from 'react-icons/fa'
 
 
-const IncomeItem = ({ incomeName, incomeAmount, editIncome, id, deleteIncome }) => {
+const IncomeItem = ({
+    incomeName,
+    incomeAmount,
+    editIncome,
+    id,
+    deleteIncome
+}) => {
     const [state, setState] = useState({ id, incomeName, incomeAmount })
     const [isEditing, setIsEditing] = useState(false)
 
@@ -50,8 +56,18 @@ const IncomeItem = ({ incomeName, incomeAmount, editIncome, id, deleteIncome }) 
         ) : (
                 <form onSubmit={handleSubmit}>
                     <StyledItem>
-                        <input name="incomeName" type="text" value={state.incomeName} onChange={handleChange} />
-                        <input name="incomeAmount" type="number" value={state.incomeAmount} onChange={handleChange} />
+                        <input
+                            name="incomeName"
+                            type="text"
+                            value={state.incomeName}
+                            onChange={handleChange}
+                        />
+                        <input
+                            name="incomeAmount"
+                            type="number"
+                            value={state.incomeAmount}
+                            onChange={handleChange}
+                        />
                         <div className="fa-btn">
                             <button type="submit" onClick={handleSubmit}>
                                 <FaCheck />

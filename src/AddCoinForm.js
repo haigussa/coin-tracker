@@ -12,7 +12,7 @@ const AddCoinForm = () => {
     const [inputAmount, setInputAmount] = useState("")
 
     const [isIncome, setIsIncome] = useState(null)
-    
+
 
     const handleTypeChange = e => {
         if (e.target.value === "incomeValue") {
@@ -54,8 +54,13 @@ const AddCoinForm = () => {
             <form onSubmit={handleSubmit}>
                 <label htmlFor="addCoinForm" />
                 <div className="type-selector">
-                    <select name="income-expense" id="income-expense" onChange={handleTypeChange} defaultValue={"choose"}>
-                        <option value="choose" disabled >Select Item</option>
+                    <select
+                        name="income-expense"
+                        id="income-expense"
+                        onChange={handleTypeChange}
+                        defaultValue={"choose"}
+                    >
+                        <option value="choose" disabled >Select Type</option>
                         <option value="incomeValue">Income</option>
                         <option value="expenseValue">Expense</option>
                     </select>
@@ -63,14 +68,40 @@ const AddCoinForm = () => {
                 <div className="input-container">
                     <div className="input-item input-name-container">
                         <label htmlFor="inputName"></label>
-                        <input name="inputName" id="inputName" type="text" value={inputName} placeholder="e.g. Electricity" onChange={handleNameChange} autoFocus />
+                        <input
+                            name="inputName"
+                            id="inputName"
+                            type="text"
+                            value={inputName}
+                            placeholder="e.g. Electricity"
+                            onChange={handleNameChange}
+                            autoFocus
+                        />
                     </div>
                     <div className="input-item input-amount-container">
                         <label htmlFor="inputAmount"></label>
-                        <input name="inputAmount" id="inputAmount" type="number" value={inputAmount} onChange={handleAmountChange} placeholder="e.g. 200" required />
+                        <input
+                            name="inputAmount"
+                            id="inputAmount"
+                            type="number"
+                            value={inputAmount}
+                            onChange={handleAmountChange}
+                            placeholder="e.g. 200"
+                            required
+                        />
                     </div>
                 </div>
-                <button type="submit" onClick={handleSubmit}>{isIncome ? "Add Income" : isIncome === false ? "Add Expense" : "Add"}</button>
+                <button
+                    type="submit"
+                    onClick={handleSubmit}
+                >
+                    {
+                        isIncome ? "Add Income"
+                            : isIncome === false
+                                ? "Add Expense"
+                                : "Add"
+                    }
+                </button>
             </form>
         </StyledAddCoinForm>
     )

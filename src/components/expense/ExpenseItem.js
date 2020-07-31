@@ -2,9 +2,17 @@ import React, { useState } from 'react'
 import StyledItem from '../styles/StyledItem'
 import { FaPen, FaTrash, FaCheck, FaWindowClose } from 'react-icons/fa'
 
-const ExpenseItem = ({ id, expenseName, expenseAmount, editExpense, deleteExpense }) => {
+const ExpenseItem = ({
+    id,
+    expenseName,
+    expenseAmount,
+    editExpense,
+    deleteExpense
+}) => {
     const [state, setState] = useState({
-        id: id, expenseName: expenseName, expenseAmount: expenseAmount
+        id: id,
+        expenseName: expenseName,
+        expenseAmount: expenseAmount
     })
     const [isEditing, setIsEditing] = useState(false)
 
@@ -12,8 +20,10 @@ const ExpenseItem = ({ id, expenseName, expenseAmount, editExpense, deleteExpens
         setIsEditing(true)
     }
     const handleChange = (e) => {
-        setState({ ...state, [e.target.name]: e.target.value })
-        console.log(state)
+        setState({
+            ...state,
+            [e.target.name]: e.target.value
+        })
     }
 
     const handleDelete = () => {
@@ -49,10 +59,20 @@ const ExpenseItem = ({ id, expenseName, expenseAmount, editExpense, deleteExpens
             <form onSubmit={handleSubmit}>
                 <StyledItem >
                     <div className="expense-name" >
-                        <input name="expenseName" value={state.expenseName} onChange={handleChange} type="text" />
+                        <input
+                            name="expenseName"
+                            value={state.expenseName}
+                            onChange={handleChange}
+                            type="text"
+                        />
                     </div>
                     <div className="expense-amount">
-                        <input name="expenseAmount" value={state.expenseAmount} onChange={handleChange} type="number" autoFocus />
+                        <input
+                            name="expenseAmount"
+                            value={state.expenseAmount}
+                            onChange={handleChange}
+                            type="number" autoFocus
+                        />
                     </div>
                     <div className="fa-btn">
                         <button type="submit" onClick={handleSubmit}>
@@ -64,7 +84,6 @@ const ExpenseItem = ({ id, expenseName, expenseAmount, editExpense, deleteExpens
                     </div>
                 </StyledItem>
             </form>
-
     )
 }
 

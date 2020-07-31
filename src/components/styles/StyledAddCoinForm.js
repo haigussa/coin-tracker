@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 const StyledAddCoinForm = styled.div`
-background-color: #1B2D45;
 padding: 1.5rem 2rem;
 max-width: 780px;
 margin: auto;

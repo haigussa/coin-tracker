@@ -1,75 +1,65 @@
-import React, { createContext, useState, useEffect } from 'react'
+import React, { createContext, useState, useEffect } from "react";
 
-export const IncomeContext = createContext()
+export const IncomeContext = createContext();
 
 const IncomeContextProvider = ({ children }) => {
+const [savedIncomes] = useState(localStorage.getItem('incomes'))
+const [incomes, setIncomes] = useState(
+    savedIncomes ? JSON.parse(savedIncomes) : []
+)
 
-    const [incomes, setIncomes] = useState([])
+  useEffect(() => {
+      localStorage.setItem("incomes", JSON.stringify(incomes))
+  }, [incomes]);
 
-useEffect(() => {
-    let localIncome = localStorage.getItem('income')
-    if(localIncome) {
-        setIncomes(JSON.parse(localIncome))
-    }
-}, [])
+  const totalIncome = incomes.reduce((acc, cur) => {
+    return (acc += cur.incomeAmount);
+  }, 0);
 
-    useEffect(() => {
-       localStorage.setItem('income', JSON.stringify(incomes))
-    }, [incomes])
+  const addIncome = (incomeName, incomeAmount, id) => {
+    setIncomes([
+      ...incomes,
+      {
+        incomeName,
+        incomeAmount,
+        id,
+      },
+    ]);
+  };
 
-    const totalIncome = incomes.reduce((acc, cur) => {
-        return acc += cur.incomeAmount;
-    }, 0)
+  const editIncome = (id, entryName, entryAmount) => {
+    const updatedIncome = incomes.map((inc) => {
+      if (id === inc.id) {
+        return {
+          ...inc,
+          incomeName: entryName,
+          incomeAmount: parseInt(entryAmount),
+        };
+      } else {
+        return inc;
+      }
+    });
+    setIncomes(updatedIncome);
+  };
 
-    const addIncome = (incomeName, incomeAmount, id) => {
-        setIncomes([
-            ...incomes,
-            {
-                incomeName,
-                incomeAmount,
-                id
-            }
-        ])
-    }
+  const deleteIncome = (id) => {
+    const IncomeAfterDelete = incomes.filter(inc => inc.id!==id)
+    setIncomes(IncomeAfterDelete)
+  };
 
-    const editIncome = (id, entryName, entryAmount) => {
-        const updatedIncome = incomes.map(inc => {
-            if (id === inc.id) {
-                return {
-                    ...inc,
-                    incomeName: entryName,
-                    incomeAmount: parseInt(entryAmount)
-                }
-            } else {
-                return inc
-            }
-        })
-        setIncomes(updatedIncome)
-    }
+  return (
+    <IncomeContext.Provider
+      value={{
+        incomes,
+        totalIncome,
+        addIncome,
+        editIncome,
+        deleteIncome,
+      }}
+    >
+      {children}
+    </IncomeContext.Provider>
+  );
+};
 
-    const deleteIncome = (id) => {
-        const IncomeAfterDelete = incomes.filter(inc => {
-            if (id !== inc.id) {
-                return inc
-            }
-            return null;
-        })
-        setIncomes(IncomeAfterDelete)
-    }
-
-    return (
-        <IncomeContext.Provider
-            value={{
-                incomes,
-                totalIncome,
-                addIncome,
-                editIncome,
-                deleteIncome
-            }}
-        >
-            {children}
-        </IncomeContext.Provider>
-    )
-}
-
-export default IncomeContextProvider
+export default IncomeContextProvider;
